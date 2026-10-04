@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: video-merger-bot
+    env: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: API_ID
+        sync: false
+      - key: API_HASH
+        sync: false
+      - key: BOT_TOKEN
+        sync: false
+      - key: BASE_URL
+        sync: false
+      - key: FILE_RETENTION_DAYS
+        value: "3650"
+      - key: MAX_FILE_SIZE_GB
+        value: "25"
+      - key: MAX_CONCURRENT_JOBS
+        value: "1"
